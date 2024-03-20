@@ -10,12 +10,14 @@ export default function Home() {
   const { theme } = useTheme();
   const router = useRouter();
 
+  const baseUrl = "https://knol-ecom-next.vercel.app";
+
   useEffect(() => {
     async function fetchProducts() {
       try {
         const { search, category, rating, sortBy } = router.query;
 
-        let url = `http://localhost:4000/api/products`;
+        let url = `${baseUrl}/api/products`;
 
         let isFirstParam = true;
 

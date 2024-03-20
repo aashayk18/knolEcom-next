@@ -9,10 +9,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const { theme } = useTheme();
 
+  const baseUrl = "https://knol-ecom-next.vercel.app";
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/login", {
+      const response = await axios.post(`${baseUrl}/login`, {
         name,
         phoneNumber,
         password,

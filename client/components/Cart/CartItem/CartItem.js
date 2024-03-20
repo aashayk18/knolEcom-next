@@ -4,13 +4,16 @@ import { useTheme } from "../../../contexts/ThemeContext";
 
 export default function CartItem(props) {
   const { theme } = useTheme();
+
+  const baseUrl = "https://knol-ecom-next.vercel.app";
+
   const deleteFromCart = async () => {
     try {
       const id = props.id;
       console.log(id);
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        `http://localhost:4000/db/cart/delete`,
+        `${baseUrl}/db/cart/delete`,
         { productId: id },
         {
           headers: {

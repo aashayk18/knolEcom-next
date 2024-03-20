@@ -11,12 +11,14 @@ export default function Orders() {
   const [authenticated, setAuthenticated] = useState(false);
   const { theme } = useTheme();
 
+  const baseUrl = "https://knol-ecom-next.vercel.app";
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const expirationTime = localStorage.getItem("expirationTime");
     const fetchOrderItems = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/orders/fetch", {
+        const response = await axios.get(`${baseUrl}/orders/fetch`, {
           headers: {
             Authorization: token,
           },
@@ -30,7 +32,7 @@ export default function Orders() {
     const fetchOrderProducts = async (productId) => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/products/${productId}`
+          `${baseUrl}/api/products/${productId}`
         ); // API endpoint
         return response.data;
       } catch (error) {

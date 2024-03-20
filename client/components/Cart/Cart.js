@@ -13,12 +13,14 @@ export default function Cart() {
   const router = useRouter();
   const { theme } = useTheme();
 
+  const baseUrl = "https://knol-ecom-next.vercel.app";
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const expirationTime = localStorage.getItem("expirationTime");
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/db/cart", {
+        const response = await axios.get(`${baseUrl}/db/cart`, {
           headers: {
             Authorization: token,
           },
@@ -32,7 +34,7 @@ export default function Cart() {
     const fetchCartProducts = async (productId) => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/products/${productId}`
+          `${baseUrl}/api/products/${productId}`
         );
         return response.data;
       } catch (error) {
@@ -67,7 +69,7 @@ export default function Cart() {
   const placeOrder = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:4000/orders/place", cartItems, {
+      await axios.post(`${baseUrl}/orders/place`, cartItems, {
         headers: {
           Authorization: token,
         },
