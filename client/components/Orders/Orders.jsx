@@ -112,7 +112,7 @@ export default function Orders() {
           )}
         </div>
         <div className="col-md-4">
-          <Link href="/" className="btn btn-secondary me-2">
+          <Link href={`/`} className="btn btn-secondary me-2">
             Back
           </Link>
         </div>

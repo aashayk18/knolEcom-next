@@ -50,7 +50,7 @@ export default function Navbar() {
       data-bs-theme={`${theme === "dark" ? "light" : "dark"}`}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" href="/">
+        <Link className="navbar-brand" href={`/`}>
           knolEcom
         </Link>
         <button
@@ -69,7 +69,7 @@ export default function Navbar() {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                href="/"
+                href={`/`}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -125,7 +125,7 @@ export default function Navbar() {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                href="/"
+                href={`/`}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -179,7 +179,7 @@ export default function Navbar() {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                href="/"
+                href={`/`}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -270,7 +270,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" href="/cart">
+              <Link className="nav-link active" aria-current="page" href={`/cart`}>
                 Cart
               </Link>
             </li>
