@@ -12,7 +12,7 @@ export default function ProductCard(props) {
     <div className={`${styles.productWhole}`}>
     <div className={`${styles.productDetails}`}>
     <Link href={`/products/${props.id}`}>
-      <img
+      <Image
         src={props.img}
         className={`${styles.productImg}`}
         alt={props.key}
