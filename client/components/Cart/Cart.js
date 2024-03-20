@@ -137,9 +137,9 @@ export default function Cart() {
             </div>
           </div>
 
-          <a href="/" className="btn btn-secondary me-2">
+          <Link href="/" className="btn btn-secondary me-2">
             Back
-          </a>
+          </Link>
 
           <button
             onClick={() => {

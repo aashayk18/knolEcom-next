@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 import { useTheme } from "../../contexts/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,9 +50,9 @@ export default function Navbar() {
       data-bs-theme={`${theme === "dark" ? "light" : "dark"}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" href="/">
           knolEcom
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -66,7 +67,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 href="/"
                 role="button"
@@ -74,7 +75,7 @@ export default function Navbar() {
                 aria-expanded="false"
               >
                 {selectedCategory ? selectedCategory : "Category"}
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -122,7 +123,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 href="/"
                 role="button"
@@ -130,7 +131,7 @@ export default function Navbar() {
                 aria-expanded="false"
               >
                 {selectedRating ? selectedRating : "Rating"}
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -176,7 +177,7 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 href="/"
                 role="button"
@@ -190,7 +191,7 @@ export default function Navbar() {
                   : sortBy === "ratingDesc"
                   ? "Avg. Rating"
                   : "Sort by"}
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -255,33 +256,33 @@ export default function Navbar() {
           </form>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
                 href={userName ? "/" : "/login"}
               >
                 {userName ? "Hey, " + userName : "Sign In"}
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/orders">
+              <Link className="nav-link active" aria-current="page" href="/orders">
                 Orders
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/cart">
+              <Link className="nav-link active" aria-current="page" href="/cart">
                 Cart
-              </a>
+              </Link>
             </li>
           </ul>
 
-          <a onClick={toggleTheme} className={`${styles.iconLink}`}>
+          <p onClick={toggleTheme} className={`${styles.iconLink}`}>
             {theme === "dark" ? (
               <FaSun style={{ color: "black", fontSize: "1em" }} />
             ) : (
               <FaMoon style={{ color: "white", fontSize: "1em" }}/>
             )}
-          </a>
+          </p>
 
           <button
             onClick={() => {
