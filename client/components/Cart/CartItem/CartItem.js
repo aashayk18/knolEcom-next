@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useTheme } from "../../../contexts/ThemeContext";
+import Image from "next/image";
 
 export default function CartItem(props) {
   const { theme } = useTheme();
@@ -38,7 +39,7 @@ export default function CartItem(props) {
     >
       <div className="row g-0">
         <div className="col-md-4">
-          <img
+          <Image
             src={props.image}
             className="img-fluid rounded-start"
             alt={props.name}

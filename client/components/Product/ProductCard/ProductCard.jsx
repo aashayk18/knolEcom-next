@@ -1,6 +1,7 @@
 
 import styles from "./ProductCard.module.css"; 
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "../../../contexts/ThemeContext";
 
 export default function ProductCard(props) {
@@ -11,7 +12,7 @@ export default function ProductCard(props) {
     <div className={`${styles.productWhole}`}>
     <div className={`${styles.productDetails}`}>
     <Link href={`/products/${props.id}`}>
-      <img
+      <Image
         src={props.img}
         className={`${styles.productImg}`}
         alt={props.key}

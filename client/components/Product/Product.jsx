@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Alert from "../Alert/Alert";
 import { useTheme } from "../../contexts/ThemeContext";
+import Image from "next/image";
 
 export default function ProductPage({ product }) {
   const [alert, setAlert] = useState(null);
@@ -66,7 +67,7 @@ export default function ProductPage({ product }) {
         <div className="row gx-5">
           <aside className="col-lg-6">
             <div className="border rounded-4 mb-3 d-flex justify-content-center">
-              <img
+              <Image
                 style={{ maxWidth: "100%", maxHeight: "100vh", margin: "auto" }}
                 className="rounded-4 fit"
                 src={product.image}
