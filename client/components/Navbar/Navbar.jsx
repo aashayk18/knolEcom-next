@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 import { useTheme } from "../../contexts/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
-import Link from "next/link";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,9 +49,9 @@ export default function Navbar() {
       data-bs-theme={`${theme === "dark" ? "light" : "dark"}`}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" href={`/`}>
+        <a className="navbar-brand" href="/">
           knolEcom
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -67,15 +66,15 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
-                href={`/`}
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 {selectedCategory ? selectedCategory : "Category"}
-              </Link>
+              </a>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -123,15 +122,15 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
-                href={`/`}
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 {selectedRating ? selectedRating : "Rating"}
-              </Link>
+              </a>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -177,9 +176,9 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
-                href={`/`}
+                href="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -191,7 +190,7 @@ export default function Navbar() {
                   : sortBy === "ratingDesc"
                   ? "Avg. Rating"
                   : "Sort by"}
-              </Link>
+              </a>
               <ul className="dropdown-menu">
                 <li>
                   <button
@@ -256,33 +255,33 @@ export default function Navbar() {
           </form>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link active"
                 aria-current="page"
                 href={userName ? "/" : "/login"}
               >
                 {userName ? "Hey, " + userName : "Sign In"}
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" href="/orders">
+              <a className="nav-link active" aria-current="page" href="/orders">
                 Orders
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" href={`/cart`}>
+              <a className="nav-link active" aria-current="page" href="/cart">
                 Cart
-              </Link>
+              </a>
             </li>
           </ul>
 
-          <Link onClick={toggleTheme} className={`${styles.iconLink}`}>
+          <a onClick={toggleTheme} className={`${styles.iconLink}`}>
             {theme === "dark" ? (
-              <FaSun style={{ color: "black", fontSize: "1.5em" }} />
+              <FaSun style={{ color: "black", fontSize: "1em" }} />
             ) : (
-              <FaMoon />
+              <FaMoon style={{ color: "white", fontSize: "1em" }}/>
             )}
-          </Link>
+          </a>
 
           <button
             onClick={() => {

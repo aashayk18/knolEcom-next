@@ -67,17 +67,17 @@ export default function Orders() {
   if (!authenticated) {
     return (
       <div
-      className={`${styles.container}`}
-      style={{
-        backgroundColor: theme === "light" ? "white" : "#131313",
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-    <br />
-    <h5>Login to see your orders!</h5>
-  </div>
-  )
-  };
+        className={`${styles.container}`}
+        style={{
+          backgroundColor: theme === "light" ? "white" : "#131313",
+          color: theme === "light" ? "black" : "white",
+        }}
+      >
+        <br />
+        <h5>Login to see your orders!</h5>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -112,9 +112,9 @@ export default function Orders() {
           )}
         </div>
         <div className="col-md-4">
-          <Link href={`/`} className="btn btn-secondary me-2">
+          <a href="/" className="btn btn-secondary me-2">
             Back
-          </Link>
+          </a>
         </div>
       </div>
     </div>

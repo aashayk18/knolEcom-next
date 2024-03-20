@@ -84,17 +84,17 @@ export default function Cart() {
   if (!authenticated) {
     return (
       <div
-      className={`${styles.container}`}
-      style={{
-        backgroundColor: theme === "light" ? "white" : "#131313",
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-    <br />
-    <h5>Login to see your cart!</h5>
-  </div>
-  )
-  };
+        className={`${styles.container}`}
+        style={{
+          backgroundColor: theme === "light" ? "white" : "#131313",
+          color: theme === "light" ? "black" : "white",
+        }}
+      >
+        <br />
+        <h5>Login to see your cart!</h5>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -136,9 +136,11 @@ export default function Cart() {
               </p>
             </div>
           </div>
-          <Link href="/" className="btn btn-secondary me-2">
+
+          <a href="/" className="btn btn-secondary me-2">
             Back
-          </Link>
+          </a>
+
           <button
             onClick={() => {
               placeOrder();
