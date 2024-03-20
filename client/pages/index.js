@@ -57,7 +57,7 @@ export default function Home() {
     }
 
     fetchProducts();
-  }, [router.query]);
+  }, [router, router.query]);
 
   return (
     <div className={`${styles.outer}`} style={{ backgroundColor: theme === "light" ? "white" : "#131313 "}}>
