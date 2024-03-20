@@ -29,7 +29,7 @@ export default function ProductPage({product}) {
     }
     try {
       const response = await axios.post(
-        `http://localhost:4000/db/cart/add`,
+        `https://knol-ecom-next.vercel.app/db/cart/add`,
         { productId: id },
         {
           headers: {
