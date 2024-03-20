@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
-import "@/styles/globals.css";
+// import "@/styles/globals.css";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import Navbar from "../components/Navbar/Navbar.jsx";
 
