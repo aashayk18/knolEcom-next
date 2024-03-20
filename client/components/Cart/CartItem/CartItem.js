@@ -39,7 +39,7 @@ export default function CartItem(props) {
     >
       <div className="row g-0">
         <div className="col-md-4">
-          <Image
+          <img
             src={props.image}
             className="img-fluid rounded-start"
             alt={props.name}
