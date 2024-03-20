@@ -1,0 +1,9 @@
+.outer {
+  height: 100%;
+  width: 100%;
+  margin-top: -50px;
+}
+
+.title {
+    padding-top: 25px;
+}

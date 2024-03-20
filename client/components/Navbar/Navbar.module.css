@@ -1,0 +1,18 @@
+.searchBar {
+  width: 35vw;
+  margin-left: 10px;
+}
+
+.iconLink {
+  display: inline-block;
+  margin-left: -30px;
+  margin-right: 30px;
+}
+
+.iconLink.light {
+  color: white;
+}
+
+.iconLink.dark {
+  color: black;
+}
